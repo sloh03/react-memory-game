@@ -1,17 +1,13 @@
 import React from "react";
 
-const ProgressBar = () => (
-<nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <a className="navbar-brand" href="#">Clicky Game</a>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li>
-        Click an image to begin!
-      </li>
-    </ul>
-    <div>
-      Score
-    </div>
+const ProgressBar = props => (
+<nav className="navbar navbar-expand-lg navbar-expand-sm navbar-expand-xs navbar-light bg-light sticky-top">
+  <a className="navbar-brand" href="/">Clicky Game</a>
+  <div>
+      {props.progressReport}
+  </div>
+  <div>
+    Score: {props.currentScore} | Top Score: {props.topScore}
   </div>
 </nav>
 );

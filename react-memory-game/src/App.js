@@ -3,54 +3,52 @@ import ProgressBar from "./components/ProgressBar";
 import Jumbotron from "./components/Jumbotron";
 import GameCard from "./components/GameCard";
 import Wrapper from "./components/Wrapper";
-import Container from "./components/Container";
-import Row from "./components/Row";
-import Col from "./components/Col";
 import friends from "./friends.json";
 import "./App.css";
+
+let currentScore = 0;
+let topScore = 0;
+let progressReport = "Click any image to begin!";
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    friends,
+    progressReport,
+    currentScore,
+    topScore
   };
 
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  };
+  // Component mounted to DOM
+  componentDidMount() {
+  }
+
+  // Function to shuffle array
+  shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <div>
-        <ProgressBar />
+        <ProgressBar 
+          progressReport={progressReport} 
+          currentScore={this.state.currentScore}
+          topScore={this.state.topScore}
+        />
         <Jumbotron />
         <Wrapper>
-        {/* <Container />
-          <Row>
-            <Col size="md-12"> */}
           {this.state.friends.map(friend => (
             <GameCard
               name={friend.name}
               image={friend.image}
             />
-            // <FriendCard
-            //   removeFriend={this.removeFriend}
-            //   id={friend.id}
-            //   key={friend.id}
-            //   name={friend.name}
-            //   image={friend.image}
-            //   occupation={friend.occupation}
-            //   location={friend.location}
-            // />
           ))}
         </Wrapper>
-        {/* </Col>
-        </Row>
-        <Container /> */}
       </div>
     );
   }
