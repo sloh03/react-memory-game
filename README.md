@@ -2,7 +2,7 @@
 
 # [LIVE DEMO](https://sloh03.github.io/react-memory-game/)
 
-This is a memory game created with React. The application's UI is broken down into components, manage component state,a nd responds to user events.
+This is a memory game created with React. The application's UI is broken down into components, managed with component state, and responds to user events.
 
 ## Function
 The game includes 12 images. When an image is clicked for the first time, the score increments by 1 and the images rendered to the page is shuffled in a random order. The game is won when all 12 images are clicked. If the game is won or if the same image is clicked more than once, the game restarts with the user's score reset back to 0.
