@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://sloh03.github.io/react-memory-game",
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
