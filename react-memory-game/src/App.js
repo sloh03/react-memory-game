@@ -6,7 +6,7 @@ import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import "./App.css";
 
-let progressReport = "Click any image to begin!";
+let progressReport = "Click any image to begin! ";
 let currentScore = 0;
 let topScore = 0;
 
